@@ -34,3 +34,39 @@ h1, h2, h4 {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
 }
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}

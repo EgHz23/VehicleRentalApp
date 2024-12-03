@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleRentalApp.Data;
 
@@ -11,9 +12,11 @@ using VehicleRentalApp.Data;
 namespace VehicleRentalApp.Migrations
 {
     [DbContext(typeof(VehicleRentalContext))]
-    partial class VehicleRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20241202201811_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,8 +273,8 @@ namespace VehicleRentalApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Comment")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stars")
                         .HasColumnType("int");
@@ -284,8 +287,6 @@ namespace VehicleRentalApp.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("VehicleId");
 
                     b.ToTable("Ratings");
                 });
@@ -330,9 +331,6 @@ namespace VehicleRentalApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double?>("AverageRating")
-                        .HasColumnType("float");
-
                     b.Property<string>("Brand")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -355,8 +353,7 @@ namespace VehicleRentalApp.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("OwnerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("PricePerDay")
                         .HasColumnType("decimal(18,2)");
@@ -365,6 +362,8 @@ namespace VehicleRentalApp.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Vehicles");
                 });
@@ -420,7 +419,7 @@ namespace VehicleRentalApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("VehicleRentalApp.Models.Rating", b =>
+            modelBuilder.Entity("VehicleRentalApp.Models.Rental", b =>
                 {
                     b.HasOne("VehicleRentalApp.Models.Vehicle", "Vehicle")
                         .WithMany()
@@ -431,15 +430,13 @@ namespace VehicleRentalApp.Migrations
                     b.Navigation("Vehicle");
                 });
 
-            modelBuilder.Entity("VehicleRentalApp.Models.Rental", b =>
+            modelBuilder.Entity("VehicleRentalApp.Models.Vehicle", b =>
                 {
-                    b.HasOne("VehicleRentalApp.Models.Vehicle", "Vehicle")
+                    b.HasOne("VehicleRentalApp.Models.ApplicationUser", "Owner")
                         .WithMany()
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OwnerId");
 
-                    b.Navigation("Vehicle");
+                    b.Navigation("Owner");
                 });
 #pragma warning restore 612, 618
         }
