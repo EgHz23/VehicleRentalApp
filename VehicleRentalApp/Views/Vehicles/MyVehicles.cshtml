@@ -1,38 +1,35 @@
 @model IEnumerable<VehicleRentalApp.Models.Vehicle>
 
-@{
-    ViewData["Title"] = "My Vehicles";
-}
-
 <div class="container mt-5">
     <h1 class="text-center">My Vehicles</h1>
     <hr />
-    @if (TempData["Message"] != null)
-    {
-        <div class="alert alert-success">@TempData["Message"]</div>
-    }
-    @if (TempData["Error"] != null)
-    {
-        <div class="alert alert-danger">@TempData["Error"]</div>
-    }
-
     <div class="row">
-        @foreach (var vehicle in Model)
+        @if (!Model.Any())
         {
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="@(vehicle.ImagePath ?? "https://via.placeholder.com/300x200")" class="card-img-top" alt="@vehicle.Brand @vehicle.Model">
-                    <div class="card-body">
-                        <h5 class="card-title">@vehicle.Brand @vehicle.Model</h5>
-                        <p class="card-text">Year: @vehicle.Year</p>
-                        <p class="card-text">Price per day: $@vehicle.PricePerDay</p>
-                        <form asp-action="Delete" method="post" class="d-inline">
-                            <input type="hidden" name="id" value="@vehicle.Id" />
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+            <p class="text-center">You have no vehicles listed.</p>
+        }
+        else
+        {
+            @foreach (var vehicle in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="@vehicle.ImagePath" class="card-img-top" alt="@vehicle.Brand @vehicle.Model" />
+                        <div class="card-body">
+                            <h5 class="card-title">@vehicle.Brand @vehicle.Model</h5>
+                            <p>Year: @vehicle.Year</p>
+                            <p>Price per day: $@vehicle.PricePerDay</p>
+                            <div class="d-flex justify-content-between">
+                                <a asp-action="Edit" asp-controller="Vehicles" asp-route-id="@vehicle.Id" class="btn btn-primary">Edit</a>
+                                <form asp-action="Delete" asp-controller="Vehicles" method="post">
+                                    <input type="hidden" name="id" value="@vehicle.Id" />
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
     </div>
 </div>

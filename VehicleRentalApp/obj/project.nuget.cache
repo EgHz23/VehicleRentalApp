@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gnKa7r4f9Gk=",
+  "dgSpecHash": "aiQyV0I4zxc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\egzon\\OneDrive\\Namizje\\seminarska_IS\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
+  "projectFilePath": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\egzon\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\egzon\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

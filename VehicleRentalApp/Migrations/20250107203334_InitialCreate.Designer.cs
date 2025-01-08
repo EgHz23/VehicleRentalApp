@@ -12,8 +12,8 @@ using VehicleRentalApp.Data;
 namespace VehicleRentalApp.Migrations
 {
     [DbContext(typeof(VehicleRentalContext))]
-    [Migration("20241203182230_AddRatingsToVehicles")]
-    partial class AddRatingsToVehicles
+    [Migration("20250107203334_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

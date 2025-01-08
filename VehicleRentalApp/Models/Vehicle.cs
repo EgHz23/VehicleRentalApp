@@ -2,6 +2,7 @@ namespace VehicleRentalApp.Models
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
 
     public class Vehicle
 {
@@ -30,7 +31,8 @@ namespace VehicleRentalApp.Models
     public bool IsAvailable { get; set; }
 
     [Required]
-    public string OwnerId { get; set; }
+    [BindNever] // Ignore during form binding
+    public required string OwnerId { get; set; }
 
     public string? ImagePath { get; set; }
 

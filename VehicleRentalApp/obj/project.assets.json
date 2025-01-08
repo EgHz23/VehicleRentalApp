@@ -8012,11 +8012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\egzon\\OneDrive\\Namizje\\seminarska_IS\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
+      "projectUniqueName": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
       "projectName": "VehicleRentalApp",
-      "projectPath": "C:\\Users\\egzon\\OneDrive\\Namizje\\seminarska_IS\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
+      "projectPath": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\VehicleRentalApp.csproj",
       "packagesPath": "C:\\Users\\egzon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\egzon\\OneDrive\\Namizje\\seminarska_IS\\VehicleRentalApp\\VehicleRentalApp\\obj\\",
+      "outputPath": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\egzon\\AppData\\Roaming\\NuGet\\NuGet.Config"
