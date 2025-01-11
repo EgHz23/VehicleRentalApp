@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleRentalApp.Data;
 
@@ -11,9 +12,11 @@ using VehicleRentalApp.Data;
 namespace VehicleRentalApp.Migrations
 {
     [DbContext(typeof(VehicleRentalContext))]
-    partial class VehicleRentalContextModelSnapshot : ModelSnapshot
+    [Migration("20250111001029_AddSenderAndReceiverToMessage")]
+    partial class AddSenderAndReceiverToMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

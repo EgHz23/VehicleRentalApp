@@ -194,6 +194,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Messages/ReceivedMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcUmVjZWl2ZWRNZXNzYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -226,8 +230,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Vehicles/MyRents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcTXlSZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Vehicles/MyVehicles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcTXlWZWhpY2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Vehicles/PrintRental.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcUHJpbnRSZW50YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/Vehicles/RentalForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcUmVudGFsRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/RAZNO_FAKS/Informacijski_sistemi/VehicleRentalApp/VehicleRentalApp/Views/_ViewImports.cshtml]

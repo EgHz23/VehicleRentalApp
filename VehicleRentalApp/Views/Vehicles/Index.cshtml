@@ -4,29 +4,20 @@
     <h1 class="text-center">Available Vehicles</h1>
     <hr />
     <div class="row">
-        @if (Model == null || !Model.Any())
+        @foreach (var vehicle in Model)
         {
-            <div class="col-12">
-                <p class="text-center">No vehicles are currently available for rent.</p>
-            </div>
-        }
-        else
-        {
-            @foreach (var vehicle in Model)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm">
-                        <img src="@Url.Content(vehicle.ImagePath)" class="card-img-top" alt="@vehicle.Brand @vehicle.Model">
-                        <div class="card-body">
-                            <h5 class="card-title">@vehicle.Brand @vehicle.Model</h5>
-                            <p class="card-text">Price per day: $@vehicle.PricePerDay</p>
-                            <p class="card-text">Year: @vehicle.Year</p>
-                            <a href="@Url.Action("Details", "Vehicles", new { id = vehicle.Id })" class="btn btn-primary">View Details</a>
-                            <p class="card-text">Rating: @(vehicle.AverageRating.HasValue ? vehicle.AverageRating.Value.ToString("0.0") : "No ratings yet")</p>
-                        </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="@vehicle.ImagePath" class="card-img-top" alt="@vehicle.Brand @vehicle.Model" />
+                    <div class="card-body">
+                        <h5 class="card-title">@vehicle.Brand @vehicle.Model</h5>
+                        <p>Year: @vehicle.Year</p>
+                        <p>Price per day: $@vehicle.PricePerDay</p>
+                        <p>Average Rating: @(vehicle.AverageRating?.ToString("0.0") ?? "No rating")</p>
+                        <a asp-action="Details" asp-route-id="@vehicle.Id" class="btn btn-primary">Details</a>
                     </div>
                 </div>
-            }
+            </div>
         }
     </div>
 </div>
