@@ -1,15 +1,17 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using VehicleRentalApp.Data;
 using VehicleRentalApp.Models;
-using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims; // For ClaimTypes
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace VehicleRentalApp.Controllers
-
 {
-    [Authorize] // Restrict to authenticated users by default
+    [Authorize]
+    
     public class VehiclesController : Controller
     {
         private readonly VehicleRentalContext _context;
@@ -25,7 +27,8 @@ namespace VehicleRentalApp.Controllers
             return View();
         }
 
-        [HttpPost]
+        // CREATE VEHICLE
+[HttpPost]
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? image)
 {
@@ -120,7 +123,6 @@ public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? image)
 
             return View(availableVehicles);
         }
-
         // View details of a specific vehicle
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)

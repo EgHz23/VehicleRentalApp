@@ -534,3 +534,11 @@ C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\obj\Debug\
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\obj\Debug\net8.0\VehicleRentalApp.pdb
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\obj\Debug\net8.0\VehicleRentalApp.genruntimeconfig.cache
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\obj\Debug\net8.0\ref\VehicleRentalApp.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Scrutor.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

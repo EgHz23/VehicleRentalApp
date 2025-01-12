@@ -1,14 +1,14 @@
-namespace VehicleRentalApp.Models
-{
+
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text.Json.Serialization;
     using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-    public class Vehicle
-    {
-        public int Id { get; set; }
 
+namespace VehicleRentalApp.Models
+{
+    public class VehicleUploadDto
+    {
         [Required]
         [StringLength(50)]
         public string Brand { get; set; }
@@ -29,19 +29,6 @@ namespace VehicleRentalApp.Models
         [Range(0.01, 1000)]
         public decimal PricePerDay { get; set; }
 
-        public bool IsAvailable { get; set; }
-
-        [JsonIgnore] // Exclude from JSON deserialization
-        //[BindNever]  // Exclude from model binding and validation
-        public string OwnerId { get; set; }
-
-        public string? ImagePath { get; set; }
-
-        // New Property for Average Rating
-        [Range(0, 5)]
-        public double? AverageRating { get; set; }
-
-        // Navigation property for Ratings
-        public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+        public IFormFile? Image { get; set; }
     }
 }
