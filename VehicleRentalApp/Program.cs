@@ -20,13 +20,25 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 // Add controllers with views
 builder.Services.AddControllersWithViews();
 
+// Configure Swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Vehicle Rental API",
         Version = "v1",
-        Description = "API for managing vehicle rentals."
+        Description = "API for managing vehicle rentals.",
+        Contact = new OpenApiContact
+        {
+            Name = "Vehicle Rental Support",
+            Email = "support@vehiclerental.com",
+            Url = new Uri("https://vehiclerental.com")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "MIT",
+            Url = new Uri("https://opensource.org/licenses/MIT")
+        }
     });
 
     c.EnableAnnotations();
@@ -42,7 +54,6 @@ builder.Services.AddSwaggerGen(c =>
         c.IncludeXmlComments(xmlPath);
     }
 });
-
 
 // Register FileUploadOperationFilter
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
@@ -88,15 +99,15 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-if (app.Environment.IsDevelopment())
+// Enable Swagger for all environments
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vehicle Rental API v1");
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vehicle Rental API v1");
+    c.RoutePrefix = "swagger"; // Swagger is accessible at /swagger/index.html
+});
 
+// Middleware pipeline
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
