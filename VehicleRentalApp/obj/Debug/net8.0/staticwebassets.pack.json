@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\vehicles\\90c286e4-a8fe-4b12-9e86-b7cf493edde8_C-class-AMg-Line-03.jpg"
     },
     {
+      "Id": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\94fa04e9-ca9a-45d8-b12d-d0bfda79aa93_urus.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\94fa04e9-ca9a-45d8-b12d-d0bfda79aa93_urus.jpg"
+    },
+    {
       "Id": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\C-class-AMg-Line-03.jpg",
       "PackagePath": "staticwebassets\\images\\vehicles\\C-class-AMg-Line-03.jpg"
     },
@@ -123,6 +127,10 @@
     {
       "Id": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\trust.jpg",
       "PackagePath": "staticwebassets\\images\\vehicles\\trust.jpg"
+    },
+    {
+      "Id": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\urus.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\urus.jpg"
     },
     {
       "Id": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\why_us.jpg",

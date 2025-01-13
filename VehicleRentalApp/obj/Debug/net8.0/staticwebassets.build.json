@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "20UxjnNxAyIHgQed7seyugPLVPh4OuVdsFy0/RwXtlI=",
+  "Hash": "FDv2xXnx6EcQPIP1nnRUVl4YTviHtjfCH6LFKlWJjps=",
   "Source": "VehicleRentalApp",
   "BasePath": "_content/VehicleRentalApp",
   "Mode": "Default",
@@ -359,6 +359,25 @@
       "OriginalItemSpec": "wwwroot\\images\\vehicles\\90c286e4-a8fe-4b12-9e86-b7cf493edde8_C-class-AMg-Line-03.jpg"
     },
     {
+      "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\94fa04e9-ca9a-45d8-b12d-d0bfda79aa93_urus.jpg",
+      "SourceId": "VehicleRentalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\",
+      "BasePath": "_content/VehicleRentalApp",
+      "RelativePath": "images/vehicles/94fa04e9-ca9a-45d8-b12d-d0bfda79aa93_urus.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\vehicles\\94fa04e9-ca9a-45d8-b12d-d0bfda79aa93_urus.jpg"
+    },
+    {
       "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\a96c9150-0fad-4648-b470-43bb8d4dd497_2022-bmw-m4.jpg",
       "SourceId": "VehicleRentalApp",
       "SourceType": "Discovered",
@@ -623,6 +642,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\vehicles\\trust.jpg"
+    },
+    {
+      "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\urus.jpg",
+      "SourceId": "VehicleRentalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\",
+      "BasePath": "_content/VehicleRentalApp",
+      "RelativePath": "images/vehicles/urus.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\vehicles\\urus.jpg"
     },
     {
       "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\why_us.jpg",

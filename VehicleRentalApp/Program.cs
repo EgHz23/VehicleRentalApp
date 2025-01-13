@@ -8,7 +8,7 @@ using Swashbuckle.AspNetCore.Filters;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add database connection
-var connectionString = builder.Configuration.GetConnectionString("VehicleRentalContext");
+var connectionString = builder.Configuration.GetConnectionString("AzureVehicleRentalContext");
 builder.Services.AddDbContext<VehicleRentalContext>(options =>
     options.UseSqlServer(connectionString));
 
