@@ -7,6 +7,8 @@ using VehicleRentalApp.Data;
 using VehicleRentalApp.Models;
 using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Linq;
+
 
 namespace VehicleRentalApp.Controllers
 {
@@ -113,16 +115,30 @@ public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? image)
 
         // View all available vehicles
         [AllowAnonymous] // Allow access to everyone
-        public async Task<IActionResult> Index()
-        {
-            var availableVehicles = await _context.Vehicles
-                .Where(v => v.IsAvailable)
-                .ToListAsync();
+        public async Task<IActionResult> Index(string brand, decimal? minPrice, decimal? maxPrice)
+{
+    var vehicles = _context.Vehicles.AsQueryable();
 
-            availableVehicles ??= new List<Vehicle>();
+    if (!string.IsNullOrEmpty(brand))
+    {
+        vehicles = vehicles.Where(v => v.Brand.Contains(brand));
+    }
 
-            return View(availableVehicles);
-        }
+    if (minPrice.HasValue)
+    {
+        vehicles = vehicles.Where(v => v.PricePerDay >= minPrice);
+    }
+
+    if (maxPrice.HasValue)
+    {
+        vehicles = vehicles.Where(v => v.PricePerDay <= maxPrice);
+    }
+
+    var result = await vehicles.ToListAsync();
+    return View(result);
+}
+
+
         // View details of a specific vehicle
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)

@@ -1,103 +1,122 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
+  background: url('../images/page/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1, h2, h4 {
   font-weight: bold;
+  color: #004085; /* Classy blue */
 }
 
-.container img {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
-.btn-lg {
-  padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+.btn-primary:hover {
+  background-color: #003d82;
 }
 
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
-.navbar .nav-link {
-  font-size: 1rem;
-  font-weight: 500;
+.btn-success:hover {
+  background-color: #1e7e34;
 }
 
-footer {
-  font-size: 0.9rem;
-  color: #6c757d;
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
-footer a {
-  color: #007bff;
-  text-decoration: none;
+.btn-danger:hover {
+  background-color: #b02a37;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-.card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card img {
-  object-fit: cover;
-  height: 200px;
-  width: 100%;
-}
 .card {
   border-radius: 15px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card img {
-  object-fit: cover;
-  height: 100%;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #333;
 }
 
 .card-text {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #555;
+}
+/* Navbar Gradient Background with Stronger Edges */
+.bg-gradient {
+  background: linear-gradient(to right, rgba(15, 76, 117, 0.95), rgba(15, 76, 117, 0.8), rgba(50, 130, 184, 0.8), rgba(50, 130, 184, 0.95));
+  border-bottom: 1px solid #bbe1fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.table {
-  margin-top: 20px;
+/* Navbar Links */
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f8f9fa !important;
+  transition: color 0.3s ease;
 }
 
-.table th {
-  background-color: #f8f9fa;
+.nav-link:hover, .nav-link.active {
+  color: #ffd700 !important; /* Classy gold for hover */
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+/* Brand Logo */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #f8f9fa !important;
+  transition: color 0.3s ease;
 }
+
+.navbar-brand:hover {
+  color: #ffd700 !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: rgba(50, 130, 184, 0.9);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+  color: #fff;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #0f4c75;
+  color: #ffd700;
+}
+
+/* Navbar Shadows */
+.navbar {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+

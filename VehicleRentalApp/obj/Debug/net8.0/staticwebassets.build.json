@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+ERYx2is4R+i9H9Eoj0J+u2U1uhY1t8VpdpMFsH6m2c=",
+  "Hash": "20UxjnNxAyIHgQed7seyugPLVPh4OuVdsFy0/RwXtlI=",
   "Source": "VehicleRentalApp",
   "BasePath": "_content/VehicleRentalApp",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\page\\background.jpg",
+      "SourceId": "VehicleRentalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\",
+      "BasePath": "_content/VehicleRentalApp",
+      "RelativePath": "images/page/background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\page\\background.jpg"
     },
     {
       "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\0065857c-30c1-49d7-8b43-8f8a68d79328_amg.jpg",
@@ -319,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\vehicles\\85307140-a3d0-4f6e-93e3-580d11f1139c_rs6.jpg"
+    },
+    {
+      "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\90c286e4-a8fe-4b12-9e86-b7cf493edde8_C-class-AMg-Line-03.jpg",
+      "SourceId": "VehicleRentalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\",
+      "BasePath": "_content/VehicleRentalApp",
+      "RelativePath": "images/vehicles/90c286e4-a8fe-4b12-9e86-b7cf493edde8_C-class-AMg-Line-03.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\vehicles\\90c286e4-a8fe-4b12-9e86-b7cf493edde8_C-class-AMg-Line-03.jpg"
     },
     {
       "Identity": "C:\\RAZNO_FAKS\\Informacijski_sistemi\\VehicleRentalApp\\VehicleRentalApp\\wwwroot\\images\\vehicles\\a96c9150-0fad-4648-b470-43bb8d4dd497_2022-bmw-m4.jpg",
