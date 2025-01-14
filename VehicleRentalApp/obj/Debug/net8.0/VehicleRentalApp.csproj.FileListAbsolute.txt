@@ -542,3 +542,6 @@ C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Scrutor.dll
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\RAZNO_FAKS\Informacijski_sistemi\VehicleRentalApp\VehicleRentalApp\bin\Debug\net8.0\System.IO.Hashing.dll

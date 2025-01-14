@@ -1,102 +1,85 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using VehicleRentalApp.Data;
 using VehicleRentalApp.Models;
-using Microsoft.AspNetCore.Http;
-using Swashbuckle.AspNetCore.Annotations;
-using System.Linq;
-
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 namespace VehicleRentalApp.Controllers
 {
     [Authorize]
-    
     public class VehiclesController : Controller
     {
         private readonly VehicleRentalContext _context;
+        private readonly IConfiguration _configuration;
 
-        public VehiclesController(VehicleRentalContext context)
+        public VehiclesController(VehicleRentalContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
-        // Add a new vehicle
         public IActionResult Create()
         {
             return View();
         }
 
-        // CREATE VEHICLE
-[HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? image)
-{
-    vehicle.IsAvailable = true; // Vehicle is available by default
-    var ownerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-    Console.WriteLine($"OwnerId Retrieved: {ownerId}");
-
-    if (string.IsNullOrEmpty(ownerId))
-    {
-        TempData["Error"] = "Unable to determine the owner of this vehicle. Please log in again.";
-        return RedirectToAction("Index", "Home");
-    }
-
-    vehicle.OwnerId = ownerId;
-    Console.WriteLine($"Vehicle OwnerId Assigned: {vehicle.OwnerId}");
-
-    // Remove validation error for OwnerId
-    ModelState.Remove(nameof(vehicle.OwnerId));
-
-    if (ModelState.IsValid)
-    {
-        try
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? image)
         {
-            // Process image upload
-            if (image != null && image.Length > 0)
+            vehicle.IsAvailable = true;
+            var ownerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(ownerId))
             {
-                var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/vehicles");
-                Directory.CreateDirectory(uploadsPath);
-
-                var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(image.FileName)}";
-                var filePath = Path.Combine(uploadsPath, fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await image.CopyToAsync(stream);
-                }
-
-                vehicle.ImagePath = $"/images/vehicles/{fileName}";
+                TempData["Error"] = "Unable to determine the owner of this vehicle. Please log in again.";
+                return RedirectToAction("Index", "Home");
             }
 
-            _context.Vehicles.Add(vehicle);
-            Console.WriteLine($"Vehicle being added: {vehicle.Brand}, OwnerId: {vehicle.OwnerId}");
-            await _context.SaveChangesAsync();
+            vehicle.OwnerId = ownerId;
 
-            TempData["Message"] = "Vehicle added successfully!";
-            return RedirectToAction(nameof(MyVehicles));
+            ModelState.Remove(nameof(vehicle.OwnerId));
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (image != null && image.Length > 0)
+                    {
+                        string blobConnectionString = _configuration.GetConnectionString("AzureBlobStorage");
+                        var blobServiceClient = new BlobServiceClient(blobConnectionString);
+                        var blobContainerClient = blobServiceClient.GetBlobContainerClient("vehicle-images");
+                        await blobContainerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
+
+                        var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(image.FileName)}";
+                        var blobClient = blobContainerClient.GetBlobClient(fileName);
+
+                        using (var stream = image.OpenReadStream())
+                        {
+                            await blobClient.UploadAsync(stream, new BlobHttpHeaders { ContentType = image.ContentType });
+                        }
+
+                        vehicle.ImagePath = blobClient.Uri.ToString();
+                    }
+
+                    _context.Vehicles.Add(vehicle);
+                    await _context.SaveChangesAsync();
+
+                    TempData["Message"] = "Vehicle added successfully!";
+                    return RedirectToAction(nameof(MyVehicles));
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = $"An error occurred while adding the vehicle: {ex.Message}";
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+            return View(vehicle);
         }
-        catch (Exception ex)
-        {
-            TempData["Error"] = "An error occurred while adding the vehicle.";
-            Console.WriteLine($"Error: {ex.Message}");
-        }
-    }
-    else
-    {
-        TempData["Error"] = "Please correct the errors in the form and try again.";
-
-        foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-        {
-            Console.WriteLine($"Validation Error: {error.ErrorMessage}");
-        }
-    }
-
-    return View(vehicle);
-}
-
         // View all vehicles owned by the current user
         public async Task<IActionResult> MyVehicles()
         {
