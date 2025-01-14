@@ -25,6 +25,25 @@
                         <strong>Average Rating:</strong> @(Model.AverageRating.HasValue ? $"{Model.AverageRating.Value:F1} / 5" : "No rating yet")
                     </p>
 
+                    <!-- Rating Form -->
+                    <div class="mt-4">
+                        <h5>Rate this Vehicle:</h5>
+                        <form asp-action="AddRating" method="post">
+                            <input type="hidden" name="vehicleId" value="@Model.Id" />
+                            <div class="form-group">
+                                <label for="stars">Rating (1-5):</label>
+                                <select id="stars" name="stars" class="form-control" required>
+                                    <option value="" disabled selected>Select rating</option>
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success mt-2">Submit Rating</button>
+                        </form>
+                    </div>
+
                     <div class="mt-4">
                         <h5>Price Calculator:</h5>
                         <form id="priceCalculatorForm">
